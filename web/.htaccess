@@ -1,0 +1,16 @@
+RewriteEngine on
+
+# не позволять httpd отдавать файлы, начинающиеся с точки (.htaccess, .svn, .git и прочие)
+RedirectMatch 403 /\..*$
+
+# если входной url оканчивается слеш(ем, ами),
+# задаём 301-й редирект на страницу без слеша
+RewriteCond  %{REQUEST_URI}  ^/.+/$
+RewriteRule  ^(.*?)/+$       http://%{HTTP_HOST}/$1  [R=301,L,QSA]
+
+# если директория или файл существуют, использовать их напрямую
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# иначе отправлять запрос на файл index.php
+RewriteRule . index.php
