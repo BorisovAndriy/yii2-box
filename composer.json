@@ -23,16 +23,26 @@
         "codemix/yii2-localeurls": "*",
         "kartik-v/yii2-grid": "@dev",
         "kartik-v/yii2-widget-select2": "*",
+        "kartik-v/yii2-icons": "@dev",
         "kartik-v/yii2-detail-view": "@dev",
         "kartik-v/yii2-widget-datepicker": "@dev",
         "kartik-v/yii2-widget-datetimepicker": "@dev",
+
         "unclead/yii2-multiple-input": "~2.0",
         "kartik-v/yii2-widget-switchinput": "*",
         "kartik-v/yii2-slider": "*",
         "kartik-v/yii2-widget-depdrop": "@dev",
+        "phpoffice/phpexcel": "1.8.1",
+        "mpdf/mpdf": "5.7.2",
         "kartik-v/yii2-date-range": "1.6.8",
-        "dmstr/yii2-adminlte-asset": "^2.1",
-        "kartik-v/yii2-icons": "@dev"
+        "phpnt/yii2-export": "*",
+        "kartik-v/yii2-widget-fileinput": "*",
+        "kartik-v/yii2-widget-activeform": "@dev",
+        "yiisoft/yii2-imagine": "*",
+        "giggsey/libphonenumber-for-php": "*",
+        "phpoffice/phpspreadsheet": "^1.2",
+        "liyunfang/yii2-widget-linkpager": "*",
+        "phpoffice/phpword": "v0.14.*"
 
     },
     "require-dev": {
