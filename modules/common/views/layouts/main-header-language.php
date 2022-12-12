@@ -15,22 +15,20 @@
         $currentUrl = implode('/', $urls)
     ?>
 
-    <!--
-    <?php if(\Yii::$app->language == 'ru'): ?>
-        <?=  Html::a(\Yii::t('app','Go to KZ'), '/'.'kz'.$currentUrl); ?>
-    <?php else : ?>
-        <?=  Html::a(\Yii::t('app','Go to RU'), '/'.'ru'.$currentUrl); ?>
-    <?php endif; ?>
-    -->
+    <?php
+    /**
+     * Перемикання мови згідно конфігурації з підсвіткою активної мови
+    */
+    $languages = (is_array(\Yii::$app->urlManager->languages)) ? \Yii::$app->urlManager->languages : false;
 
-    <?php $class = (\Yii::$app->language == 'kz') ? 'active' : '' ?>
-    <?=  Html::a(\Yii::t('app','KZ'), '/'.'kz'.$currentUrl, ['class' => $class]); ?>
+    if ($languages){
+        foreach ($languages as $language){
+            $class = (\Yii::$app->language == $language) ? 'active' : '';
+            echo Html::a(\Yii::t('app',$language), '/'.$language.$currentUrl, ['class' => $class]);
+        }
+    }
+    ?>
 
-    <?php $class = (\Yii::$app->language == 'ru') ? 'active' : '' ?>
-    <?=  Html::a(\Yii::t('app','RU'), '/'.'ru'.$currentUrl, ['class' => $class]); ?>
-
-    <?php $class = (\Yii::$app->language == 'en') ? 'active' : '' ?>
-    <?=  Html::a(\Yii::t('app','EN'), '/'.'en'.$currentUrl, ['class' => $class]); ?>
 </li>
 
 <style>
